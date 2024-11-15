@@ -9,13 +9,11 @@ if %errorLevel% == 0 (
     exit /b
 )
 
-:: Add registry keys
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f
-echo Registry keys added successfully, Bing search results will no longer appear in the start menu.
-
-:: Change keyboard layout to US
 reg add "HKCU\Keyboard Layout\Preload" /v 1 /t REG_SZ /d 00000409 /f
 echo Keyboard layout changed to US.
+
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f
+echo Registry keys added successfully, Bing search results will no longer appear in the start menu.
 
 reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 echo Full right-click context menu enabled.
