@@ -9,6 +9,10 @@ if %errorLevel% == 0 (
     exit /b
 )
 
+:: Set execution policy to RemoteSigned for the current user
+powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force"
+echo Execution policy set to RemoteSigned.
+
 reg add "HKCU\Keyboard Layout\Preload" /v 1 /t REG_SZ /d 00000409 /f
 echo Keyboard layout changed to US.
 
