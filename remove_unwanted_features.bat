@@ -13,9 +13,6 @@ if %errorLevel% == 0 (
 powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force"
 echo Execution policy set to RemoteSigned.
 
-reg add "HKCU\Keyboard Layout\Preload" /v 1 /t REG_SZ /d 00000409 /f
-echo Keyboard layout changed to US.
-
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f
 echo Registry keys added successfully, Bing search results will no longer appear in the start menu.
 
