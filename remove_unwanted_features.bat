@@ -21,10 +21,4 @@ echo Registry keys added successfully, Bing search results will no longer appear
 reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 echo Full right-click context menu enabled.
 
-:: Configure Start Menu to show all apps by default and hide pinned/recommended apps
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_ShowAllApps /t REG_DWORD /d 1 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_TrackProgs /t REG_DWORD /d 0 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_TrackDocs /t REG_DWORD /d 0 /f
-echo Start Menu configured to show all apps by default and hide pinned/recommended apps.
-
 pause
