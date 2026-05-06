@@ -17,7 +17,6 @@ if %errorLevel% == 0 (
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f
 echo Registry keys added successfully, Bing search results will no longer appear in the start menu.
 
-
 :: Enable full right-click context menu (classic)
 reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 echo Full right-click context menu enabled.
@@ -38,8 +37,8 @@ echo Taskbar moved to the left.
 :: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /v EnableAutoTray /t REG_DWORD /d 0 /f
 :: echo All system tray icons will be shown.
 
-:: Show labels on taskbar buttons
-:: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarGlomLevel /t REG_DWORD /d 1 /f
-:: echo Taskbar button labels enabled.
+:: Show file extensions in File Explorer
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
+echo File extensions will be shown in File Explorer.
 
 pause
